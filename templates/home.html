@@ -14,7 +14,8 @@ Home - TG PGECET Analyzer
     </h1>
 
     <p class="lead mt-3">
-        Search previous years' counselling cutoff ranks for colleges across Telangana.
+        Search and analyze TG PGECET counselling cutoff ranks across colleges, branches,
+        categories, genders and counselling phases.
     </p>
 
 </section>
@@ -30,12 +31,32 @@ Home - TG PGECET Analyzer
         <div class="card-body p-4">
 
             <h2 class="text-center mb-4">
-                Search Cutoff Ranks
+                Find PGECET Cutoff Ranks
             </h2>
 
             <form>
 
                 <div class="row">
+
+                    <!-- Year -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Year <span class="text-danger">*</span>
+                        </label>
+
+                        <select class="form-select" required>
+
+                            <option value="" selected disabled>Select Year</option>
+                            <option>2026</option>
+                            <option>2025</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- College -->
 
                     <div class="col-md-6 mb-3">
 
@@ -45,11 +66,13 @@ Home - TG PGECET Analyzer
 
                         <select class="form-select">
 
-                            <option selected>Select College</option>
+                            <option selected>All Colleges</option>
 
                         </select>
 
                     </div>
+
+                    <!-- Branch -->
 
                     <div class="col-md-6 mb-3">
 
@@ -59,11 +82,13 @@ Home - TG PGECET Analyzer
 
                         <select class="form-select">
 
-                            <option selected>Select Branch</option>
+                            <option selected>All Branches</option>
 
                         </select>
 
                     </div>
+
+                    <!-- Category -->
 
                     <div class="col-md-6 mb-3">
 
@@ -73,11 +98,13 @@ Home - TG PGECET Analyzer
 
                         <select class="form-select">
 
-                            <option selected>Select Category</option>
+                            <option selected>All Categories</option>
 
                         </select>
 
                     </div>
+
+                    <!-- Gender -->
 
                     <div class="col-md-6 mb-3">
 
@@ -87,13 +114,15 @@ Home - TG PGECET Analyzer
 
                         <select class="form-select">
 
-                            <option selected>Select Gender</option>
+                            <option selected>All Genders</option>
 
                         </select>
 
                     </div>
 
-                    <div class="col-md-12 mb-3">
+                    <!-- Counselling Phase -->
+
+                    <div class="col-md-6 mb-3">
 
                         <label class="form-label">
                             Counselling Phase
@@ -101,9 +130,25 @@ Home - TG PGECET Analyzer
 
                         <select class="form-select">
 
-                            <option selected>Select Phase</option>
+                            <option selected>All Phases</option>
 
                         </select>
+
+                    </div>
+
+                    <!-- Maximum Cutoff Rank -->
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Maximum Cutoff Rank
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            placeholder="e.g. 2000"
+                            min="1">
 
                     </div>
 
