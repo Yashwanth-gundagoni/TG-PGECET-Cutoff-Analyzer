@@ -8,6 +8,8 @@ class Candidate(db.Model):
 
     college = db.Column(db.String(250), nullable=False)
 
+    branch = db.Column(db.String(150), nullable=False)
+
     sno = db.Column(db.Integer)
 
     percentile = db.Column(db.Float)

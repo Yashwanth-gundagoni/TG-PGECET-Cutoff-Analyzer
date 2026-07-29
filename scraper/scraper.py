@@ -98,6 +98,27 @@ def select_college(wait, index):
     return dropdown.first_selected_option.text.strip()
 
 
+def split_college_branch(text):
+    """
+    Splits:
+    College Name - Branch - REG/SF/SNS
+
+    into:
+    College Name
+    Branch
+    """
+
+    parts = text.rsplit(" - ", 2)
+
+    if len(parts) != 3:
+        return text.strip(), ""
+
+    college = parts[0].strip()
+    branch = parts[1].strip()
+
+    return college, branch
+
+
 def click_search(driver, wait):
     """
     Clicks the Search button and waits until
@@ -225,13 +246,14 @@ def scrape_college(wait):
     return candidates
 
 
-def save_candidate(candidate_data, college, year):
+def save_candidate(candidate_data, college, branch, year):
     """
     Saves one candidate into the database.
     """
 
     candidate = Candidate(
         college=college,
+        branch=branch,
         sno=int(candidate_data["sno"]),
         percentile=float(candidate_data["percentile"]),
         rank=int(candidate_data["rank"]),
@@ -273,6 +295,7 @@ if __name__ == "__main__":
                 try:
                     # Select college
                     selected = select_college(wait, index)
+                    college_name, branch_name = split_college_branch(selected)
 
                     # Click Search
                     click_search(driver, wait)
@@ -285,7 +308,8 @@ if __name__ == "__main__":
                     for candidate in candidates:
                         save_candidate(
                             candidate_data=candidate,
-                            college=selected,
+                            college=college_name,
+                            branch=branch_name,
                             year=YEAR
                         )
                         total_saved += 1
