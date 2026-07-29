@@ -13,3 +13,6 @@ __pycache__/
 
 # Environment variables
 .env
+
+# Log files
+scraper_log.txt
