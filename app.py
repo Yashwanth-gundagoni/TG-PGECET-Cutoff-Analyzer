@@ -6,6 +6,11 @@ from models import Candidate
 
 app = Flask(__name__)
 
+@app.context_processor
+def inject_request_path():
+    from flask import request
+    return dict(current_path=request.path)
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///pgecet.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 

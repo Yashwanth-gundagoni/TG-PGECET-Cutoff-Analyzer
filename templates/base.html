@@ -2,34 +2,123 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}TG PGECET Analyzer{% endblock %}</title>
+    <title>
+        {% block title %}{% endblock %}
+    </title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-dark bg-primary">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+
         <div class="container">
-            <a class="navbar-brand fw-bold" href="/">
-                TG PGECET Analyzer
-            </a>
+
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
+            <i class="bi bi-mortarboard-fill text-primary me-2"></i>
+            TG PGECET Cutoff Analyzer
+        </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_path == '/' %}active text-primary fw-semibold{% endif %}" href="/">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_path.startswith('/cutoff-range') %}active text-primary fw-semibold{% endif %}" href="/cutoff-range">
+                            Find Colleges
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                       <a class="nav-link {% if current_path.startswith('/college-cutoffs') %}active text-primary fw-semibold{% endif %}" href="/college-cutoffs">
+                           College Cutoffs
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_path.startswith('/data-info') %}active text-primary fw-semibold{% endif %}" href="/data-info">
+                            Data Information
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_path.startswith('/about') %}active text-primary fw-semibold{% endif %}" href="/about">
+                            About
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
+
     </nav>
 
-    <!-- Page Content -->
-    <div class="container mt-5">
-        {% block content %}
-        {% endblock %}
-    </div>
+    <!-- Main Content -->
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+
+    <footer class="mt-5">
+
+        <div class="container text-center py-4">
+
+            <h5 class="fw-bold mb-3">
+                  TG PGECET Allotment Analyzer
+            </h5>
+
+            <p class="mb-3">
+                Built using TG PGECET historical allotment data.
+            </p>
+
+            <small class="text-muted">
+                This application is intended for educational and analytical
+                purposes only and is not affiliated with TGCHE or the official
+                TG PGECET counselling portal.
+            </small>
+
+        </div>
+
+    </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

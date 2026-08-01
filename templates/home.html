@@ -1,249 +1,216 @@
 {% extends "base.html" %}
 
 {% block title %}
-Home - TG PGECET Analyzer
+TG PGECET Cutoff Analyzer
 {% endblock %}
 
 {% block content %}
 
-<!-- Hero Section -->
-<section class="text-center py-5">
-
-    <h1 class="display-3 fw-bold">
-        🎓 TG PGECET Cutoff Analyzer
-    </h1>
-
-    <p class="lead mt-3">
-        Search and analyze TG PGECET counselling cutoff ranks across colleges, branches,
-        categories, genders and counselling phases.
-    </p>
-
-</section>
-
-<hr class="my-5">
-
-<!-- Search Section -->
-
-<section>
-
-    <div class="card shadow">
-
-        <div class="card-body p-4">
-
-            <h2 class="text-center mb-4">
-                Find PGECET Cutoff Ranks
-            </h2>
-
-            <form>
-
-                <div class="row">
-
-                    <!-- Year -->
-
-                    <div class="col-md-6 mb-3">
-
-                        <label class="form-label">
-                            Year <span class="text-danger">*</span>
-                        </label>
-
-                        <select class="form-select" required>
-
-                            <option value="" selected disabled>Select Year</option>
-                            <option>2026</option>
-                            <option>2025</option>
-
-                        </select>
-
-                    </div>
-
-                    <!-- College -->
-
-                    <div class="col-md-6 mb-3">
-
-                        <label class="form-label">
-                            College
-                        </label>
-
-                        <select class="form-select">
-
-                            <option selected>All Colleges</option>
-
-                        </select>
-
-                    </div>
-
-                    <!-- Branch -->
-
-                    <div class="col-md-6 mb-3">
-
-                        <label class="form-label">
-                            Branch
-                        </label>
-
-                        <select class="form-select">
-
-                            <option selected>All Branches</option>
-
-                        </select>
-
-                    </div>
-
-                    <!-- Category -->
-
-                    <div class="col-md-6 mb-3">
-
-                        <label class="form-label">
-                            Category
-                        </label>
-
-                        <select class="form-select">
-
-                            <option selected>All Categories</option>
-
-                        </select>
-
-                    </div>
-
-                    <!-- Gender -->
-
-                    <div class="col-md-6 mb-3">
-
-                        <label class="form-label">
-                            Gender
-                        </label>
-
-                        <select class="form-select">
-
-                            <option selected>All Genders</option>
-
-                        </select>
-
-                    </div>
-
-                    <!-- Counselling Phase -->
-
-                    <div class="col-md-6 mb-3">
-
-                        <label class="form-label">
-                            Counselling Phase
-                        </label>
-
-                        <select class="form-select">
-
-                            <option selected>All Phases</option>
-
-                        </select>
-
-                    </div>
-
-                    <!-- Maximum Cutoff Rank -->
-
-                    <div class="col-md-6 mb-3">
-
-                        <label class="form-label">
-                            Maximum Cutoff Rank
-                        </label>
-
-                        <input
-                            type="number"
-                            class="form-control"
-                            placeholder="e.g. 2000"
-                            min="1">
-
-                    </div>
-
-                </div>
-
-                <div class="text-center mt-3">
-
-                    <button class="btn btn-primary btn-lg px-5">
-
-                        Search
-
-                    </button>
-
-                </div>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-<hr class="my-5">
-
-<!-- Features -->
-
-<div class="row text-center">
-
-    <div class="col-md-4 mb-4">
-
-        <div class="card shadow h-100">
-
-            <div class="card-body">
-
-                <h1>⚡</h1>
-
-                <h4 class="mt-3">
-                    Fast Search
-                </h4>
-
-                <p>
-                    Instantly search cutoff ranks from the local database.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="col-md-4 mb-4">
-
-        <div class="card shadow h-100">
-
-            <div class="card-body">
-
-                <h1>📊</h1>
-
-                <h4 class="mt-3">
-                    Accurate Data
-                </h4>
-
-                <p>
-                    Data collected directly from the official TG PGECET counselling portal.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="col-md-4 mb-4">
-
-        <div class="card shadow h-100">
-
-            <div class="card-body">
-
-                <h1>🏫</h1>
-
-                <h4 class="mt-3">
-                    All Colleges
-                </h4>
-
-                <p>
-                    Search across colleges, branches, categories, genders and counselling phases.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
+<!-- Official Header -->
+<div class="bg-white text-center py-3">
+    <img
+        src="{{ url_for('static', filename='images/tgpgecet_header.png') }}"
+        class="img-fluid header-image"
+        alt="TG PGECET Header">
 </div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container text-center">
+
+        <h1 class="display-4 hero-title">
+            TG PGECET Cutoff Analyzer
+        </h1>
+
+        <h4 class="hero-subtitle mt-3">
+            Historical Cutoff Analysis Portal
+        </h4>
+
+        <p class="text-secondary mt-3 mb-2 fw-medium">
+            <i class="bi bi-database-fill-check text-primary"></i>
+            Historical analysis based on official TG PGECET counselling allotment records (2025–2026).
+        </p>
+
+    <p class="lead text-muted mt-3 mx-auto" style="max-width:850px;">
+            Explore historical TG PGECET allotment data through comprehensive
+            cutoff analysis across colleges, branches, categories and
+            counselling phases.
+        </p>
+
+    </div>
+</section>
+
+<!-- Analyzer Cards -->
+<section class="pb-5">
+    <div class="container">
+
+        <h2 class="text-center section-title">
+            Choose an Analysis Method
+        </h2>
+
+        <div class="row g-4">
+
+            <!-- Find Colleges -->
+            <div class="col-lg-6">
+
+                <div class="card feature-card h-100 text-center p-4">
+
+                    <i class="bi bi-bar-chart-line-fill feature-icon"></i>
+
+                    <h3 class="fw-bold mt-4">
+                        Find Colleges by Cutoff Range
+                    </h3>
+
+                    <p class="text-muted mt-3">
+                        Explore colleges whose historical closing cutoff
+                        ranks fall within your selected cutoff range.
+                    </p>
+
+                    <div class="mt-auto">
+                        <a href="/cutoff-range"
+                           class="btn btn-primary feature-button mt-3">
+                            Open Analyzer
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- College Wise -->
+            <div class="col-lg-6">
+
+                <div class="card feature-card h-100 text-center p-4">
+
+                    <i class="bi bi-building feature-icon"></i>
+
+                    <h3 class="fw-bold mt-4">
+                        View College-wise Cutoffs
+                    </h3>
+
+                    <p class="text-muted mt-3">
+                        View category-wise historical closing cutoff ranks
+                        for any college and branch.
+                    </p>
+
+                    <div class="mt-auto">
+                        <a href="/college-cutoffs"
+                           class="btn btn-primary feature-button mt-3">
+                            Open Analyzer
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- Database Overview -->
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <h2 class="text-center section-title">
+            Database Statistics
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="card feature-card text-center p-4">
+                    <h2 class="text-primary fw-bold">2</h2>
+                    <h5>Years Covered</h5>
+                    <p class="text-muted mb-0">2025 & 2026</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card feature-card text-center p-4">
+                    <h2 class="text-primary fw-bold">--</h2>
+                    <h5>Colleges</h5>
+                    <p class="text-muted mb-0">Historical Records</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card feature-card text-center p-4">
+                    <h2 class="text-primary fw-bold">95</h2>
+                    <h5>Branches</h5>
+                    <p class="text-muted mb-0">Grouped Streams</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card feature-card text-center p-4">
+                    <h2 class="text-primary fw-bold">--</h2>
+                    <h5>Records</h5>
+                    <p class="text-muted mb-0">Candidate Allotments</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Why Use This Analyzer -->
+<section class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center section-title">
+            Why Choose This Analyzer?
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card text-center p-4 h-100">
+                    <i class="bi bi-clock-history feature-icon"></i>
+                    <h5 class="mt-3">Historical Data</h5>
+                    <p class="text-muted mb-0">
+                        Built using TG PGECET historical allotment records.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card text-center p-4 h-100">
+                    <i class="bi bi-funnel-fill feature-icon"></i>
+                    <h5 class="mt-3">Smart Filters</h5>
+                    <p class="text-muted mb-0">
+                        Analyze cutoffs using year, category, branch and more.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card text-center p-4 h-100">
+                    <i class="bi bi-building feature-icon"></i>
+                    <h5 class="mt-3">College Analysis</h5>
+                    <p class="text-muted mb-0">
+                        Explore category-wise cutoffs for individual colleges.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card text-center p-4 h-100">
+                    <i class="bi bi-lightning-charge-fill feature-icon"></i>
+                    <h5 class="mt-3">Fast Results</h5>
+                    <p class="text-muted mb-0">
+                        Get organized historical results instantly.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}
