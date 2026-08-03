@@ -39,6 +39,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    // ============================================
+// College Tom Select
+// ============================================
+
+const collegeSelect = new TomSelect("#college-select", {
+
+    plugins: ["remove_button"],
+
+    create: false,
+    persist: false,
+    hideSelected: true,
+    closeAfterSelect: false,
+
+    maxOptions: null,
+
+    placeholder: "Search or select colleges..."
+
+});
+
+// ============================================
+// Load Colleges
+// ============================================
+
+fetch("/api/colleges")
+    .then(response => response.json())
+    .then(data => {
+
+        data.colleges.forEach(college => {
+
+            collegeSelect.addOption({
+
+                value: college,
+                text: college
+
+            });
+
+        });
+
+        collegeSelect.refreshOptions(false);
+
+    })
+    .catch(error => {
+
+        console.error("Error loading colleges:", error);
+
+    });
 
     // ============================================
     // Prevent Enter from auto-selecting
