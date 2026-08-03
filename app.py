@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 from database import db
 from models import Candidate
-
+from routes.cutoff_range import cutoff_range_bp
 
 app = Flask(__name__)
 
@@ -15,6 +15,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///pgecet.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)
+
+app.register_blueprint(cutoff_range_bp)
 
 
 @app.route("/")

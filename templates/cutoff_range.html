@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}
+Find Colleges by Cutoff Range
+{% endblock %}
+
+{% block content %}
+
+<section class="py-5 bg-light border-bottom">
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h1 class="display-5 fw-bold">
+                Find Colleges by Cutoff Range
+            </h1>
+
+            <h4 class="text-primary mt-3">
+                Historical Cutoff Search
+            </h4>
+
+            <p class="text-muted mt-3 mx-auto" style="max-width: 850px;">
+                Search historical TG PGECET allotment records by selecting
+                year, category, branch streams, branches, cutoff range and
+                optional filters like colleges, gender and counselling phase.
+            </p>
+
+        </div>
+
+        <div class="card shadow border-0">
+
+    <div class="card-header bg-primary text-white">
+
+        <h3 class="mb-0">
+            Search Criteria
+        </h3>
+
+    </div>
+
+    <div class="card-body">
+
+        <form>
+
+            <div class="row g-4">
+
+                <!-- Year -->
+                <div class="col-md-6">
+
+                    <label class="form-label fw-semibold">
+                        Year <span class="text-danger">*</span>
+                    </label>
+
+                    <select class="form-select">
+
+                        <option selected disabled>
+                            Select Year
+                        </option>
+
+                        <option>2026</option>
+                        <option>2025</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Category -->
+                <div class="col-md-6">
+
+                    <label class="form-label fw-semibold">
+                        Category <span class="text-danger">*</span>
+                    </label>
+
+                    <select class="form-select">
+
+                        <option selected disabled>
+                            Select Category
+                        </option>
+
+                        <option>OC</option>
+                        <option>BC-A</option>
+                        <option>BC-B</option>
+                        <option>BC-C</option>
+                        <option>BC-D</option>
+                        <option>BC-E</option>
+                        <option>SC</option>
+                        <option>ST</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <hr class="my-4">
+            <div class="row g-4 mt-1">
+
+    <!-- Branch Streams -->
+    <div class="col-md-6">
+
+        <label class="form-label fw-semibold">
+            Branch Stream
+            <span class="text-danger">*</span>
+        </label>
+
+        <select
+                id="branch-stream-select"
+                class="form-select"
+                multiple>
+
+            <option value="Computer Science">
+    Computer Science
+</option>
+
+            <option value="Electronics & Communication">Electronics & Communication</option>
+
+<option value="Electrical Engineering">Electrical Engineering</option>
+
+<option value="Mechanical Engineering">Mechanical Engineering</option>
+
+<option value="Civil Engineering">Civil Engineering</option>
+
+<option value="Chemical Engineering">Chemical Engineering</option>
+
+<option value="Production & Industrial">Production & Industrial</option>
+
+<option value="Metallurgy & Materials">Metallurgy & Materials</option>
+
+        </select>
+
+        <div class="form-text">
+            Multiple streams can be selected.
+        </div>
+
+    </div>
+
+    <!-- Branches -->
+    <div class="col-md-6">
+
+        <label class="form-label fw-semibold">
+            Branches
+        </label>
+
+      <select
+        id="branch-select"
+        class="form-select"
+        multiple>
+
+    </select>
+        <div class="form-text">
+            Leave empty to include all branches from selected streams.
+        </div>
+
+    </div>
+
+</div>
+
+            <div class="text-center">
+
+                <p class="text-muted mb-0">
+                    More filters will be added in the next step.
+                </p>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+    </div>
+</section>
+
+{% endblock %}
