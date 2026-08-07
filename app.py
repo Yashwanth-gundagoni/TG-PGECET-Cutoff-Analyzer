@@ -20,33 +20,7 @@ db.init_app(app)
 app.register_blueprint(cutoff_range_bp)
 
 
-@app.route("/api/branches")
-def get_branches():
 
-    branches = (
-        db.session.query(Candidate.branch)
-        .distinct()
-        .order_by(Candidate.branch)
-        .all()
-    )
-
-    database_branches = [branch[0] for branch in branches]
-
-    result = {}
-
-    for stream, mapped_branches in BRANCH_MAPPING.items():
-
-        stream_branches = []
-
-        for branch in mapped_branches:
-
-            if branch in database_branches:
-                stream_branches.append(branch)
-
-        if stream_branches:
-            result[stream] = sorted(stream_branches)
-
-    return result
 
 
 @app.route("/api/colleges")
